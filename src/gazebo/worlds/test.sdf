@@ -97,23 +97,68 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>0.40567199999999998 0.0577195 -5.9742900000000004e-12 2.1194300000000001e-18 -4.11082e-12 -4.35629e-30</pose>
+      <pose>0.84217500000000001 -0.50013799999999997 -4.7104900000000002e-11 7.7535499999999982e-12 -2.786999999999999e-11 -1.57809</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='Design_Ideas_Drawer_Store_Organizer'>
+    <include>
+      <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foodcourttable1/2</uri>
+      <name>FoodCourtTable1</name>
+      <pose>0.84802 -1.12053 0 0 0 -1.57744</pose>
+    </include>
+    <model name='TrashBin'>
+      <static>true</static>
+      <link name='body'>
+        <pose>0 0 0 0 0 0</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/trashbin/2/files/meshes/TrashBin.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/trashbin/2/files/meshes/TrashBin.obj</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.6479299999999999 -0.93281999999999998 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/gambit/models/potted meat can/2</uri>
+      <name>potted_meat_can</name>
+      <pose>0.76592613411118282 -1.1861176904339701 0.72767496906833085 -1.5182254631667318 0.21762941037041461 -0.2197996954041809</pose>
+    </include>
+    <model name='Weston_No_33_Signature_Sausage_Tonic_12_fl_oz'>
       <link name='link_0'>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/googleresearch/models/design_ideas_drawer_store_organizer/1/meshes/model.obj</uri>
+              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/googleresearch/models/weston_no_33_signature_sausage_tonic_12_fl_oz/1/meshes/model.obj</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision_0'>
           <geometry>
             <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/googleresearch/models/design_ideas_drawer_store_organizer/1/meshes/model.obj</uri>
+              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/googleresearch/models/weston_no_33_signature_sausage_tonic_12_fl_oz/1/meshes/model.obj</uri>
             </mesh>
           </geometry>
         </collision>
@@ -132,557 +177,14 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>0.25533924053396584 -1.1965384440712779 1.0127031027625801 -0.005783765856433737 0.014508155270637162 -1.5615094470315767</pose>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='Table'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='surface'>
-          <pose>0 0 1 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.5 0.80000000000000004 0.029999999999999999</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0.59999999999999998</mu>
-                <mu2>0.59999999999999998</mu2>
-              </ode>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='visual1'>
-          <pose>0 0 1 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.5 0.80000000000000004 0.029999999999999999</size>
-            </box>
-          </geometry>
-          <material>
-            <diffuse>1 1 1 1</diffuse>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Wood</name>
-            </script>
-            <pbr>
-              <metal>
-                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/table/4/files/Table_Diffuse.jpg</albedo_map>
-              </metal>
-            </pbr>
-          </material>
-        </visual>
-        <collision name='front_left_leg'>
-          <pose>0.68000000000000005 0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='front_left_leg'>
-          <pose>0.68000000000000005 0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <diffuse>0.5 0.5 0.5 1</diffuse>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='front_right_leg'>
-          <pose>0.68000000000000005 -0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='front_right_leg'>
-          <pose>0.68000000000000005 -0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <diffuse>0.5 0.5 0.5 1</diffuse>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='back_right_leg'>
-          <pose>-0.68000000000000005 -0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='back_right_leg'>
-          <pose>-0.68000000000000005 -0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <diffuse>0.5 0.5 0.5 1</diffuse>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='back_left_leg'>
-          <pose>-0.68000000000000005 0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='back_left_leg'>
-          <pose>-0.68000000000000005 0.38 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.02</radius>
-              <length>1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <diffuse>0.5 0.5 0.5 1</diffuse>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial>
-          <pose>0 0 0 0 0 0</pose>
-          <mass>1</mass>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>0.87534000000000001 -1.19008 0 0 0 0</pose>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='wood_block'>
-      <pose>0.98782430397426224 0.32855598523752483 -0.00017360855864125211 -0.00018846627896693113 -0.0024772540681995549 0.00042313591355305855</pose>
-      <link name='link'>
-        <inertial>
-          <inertia>
-            <ixx>6.5318300660206713e-06</ixx>
-            <ixy>-9.289556032355845e-22</ixy>
-            <ixz>-6.3820397705101191e-22</ixz>
-            <iyy>6.4967883219170678e-06</iyy>
-            <iyz>-1.1996538048028797e-21</iyz>
-            <izz>2.0235216718785673e-06</izz>
-          </inertia>
-          <mass>0.0015785408903207848</mass>
-          <pose>0 0 0 0 0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/gambit/models/wooden block/2/textured.dae</uri>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/gambit/models/wooden block/2/textured.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='gear_part_1'>
-      <link name='link'>
-        <inertial>
-          <pose>0 0 0.005875 0 0 0</pose>
-          <mass>0.5</mass>
-          <inertia>
-            <ixx>0.00019820250999999999</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00019820250999999999</iyy>
-            <iyz>0</iyz>
-            <izz>0.00038440502999999998</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose>0 0 0.005875 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.012</length>
-              <radius>0.039212499999999997</radius>
-            </cylinder>
-          </geometry>
-          <surface>
-            <contact>
-              <ode>
-                <max_vel>0.10000000000000001</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/gear part/3/files/meshes/gear.dae</uri>
-              <scale>0.25 0.25 0.25</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/gear part/3/files/materials/scripts</uri>
-              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/gear part/3/files/materials/textures</uri>
-              <name>ArmPart/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>0.61777400970458984 -0.93863332271575928 1.0151249931733477 -3.5567386764003265e-17 1.0033255029738442e-16 1.1795233717382681e-18</pose>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='coke_can'>
-      <link name='link'>
-        <inertial>
-          <pose>-0.01 -0.012 0.14999999999999999 0 0 0</pose>
-          <mass>0.39000000000000001</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019000000000000001</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <pose>0 0 -0.46000000000000002 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/coke can/3/files/meshes/coke_can.dae</uri>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-              </ode>
-            </friction>
-            <contact>
-              <ode>
-                <kp>10000000</kp>
-                <kd>1</kd>
-                <min_depth>0.001</min_depth>
-                <max_vel>0.10000000000000001</max_vel>
-              </ode>
-            </contact>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 -0.46000000000000002 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/coke can/3/files/meshes/coke_can.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <pose>0 0 0 0 0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <pose>1.49437 -1.2583 1.01111 -0.011212700000000004 0.0040285200000000016 -0.00027316300000000015</pose>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='fidget_spinner'>
-      <link name='fidget_spinner'>
-        <pose>0 0 0 0 0 0</pose>
-        <inertial auto='true'>
-          <pose>5.586472451742116e-06 1.2421738248007776e-05 -2.8291047676984386e-08 0 0 0</pose>
-          <mass>0.27090664987049684</mass>
-          <inertia>
-            <ixx>0.00037145851766555264</ixx>
-            <ixy>-1.7754954731842663e-07</ixy>
-            <ixz>1.533546570744343e-10</ixz>
-            <iyy>0.00037460622630949467</iyy>
-            <iyz>4.6221227067418294e-08</iyz>
-            <izz>0.00073613674299500664</izz>
-          </inertia>
-        </inertial>
-        <collision name='fidget_spinner_col'>
-          <pose>0 0 0 1.5700000000000001 0 0</pose>
-          <density>1000</density>
-          <geometry>
-            <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/openrobotics/models/fidget spinner/1/meshes/Spinner_scaled.stl</uri>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name='fidget_spinner_vis'>
-          <pose>0 0 0 1.5700000000000001 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/openrobotics/models/fidget spinner/1/meshes/Spinner_scaled.stl</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <diffuse>0.862699986 0.0780000016 0.234999999 1</diffuse>
-            <ambient>0.862699986 0.0780000016 0.234999999 1</ambient>
-            <specular>0.862699986 0.0780000016 0.234999999 1</specular>
-          </material>
-        </visual>
-        <collision name='cylinder_weight_col'>
-          <density>2710</density>
-          <pose>0 0.050000000000000003 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_weight_col'>
-          <pose>0 0.050000000000000003 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0.660000026 1 1 1</ambient>
-            <diffuse>0.660000026 1 1 1</diffuse>
-            <specular>0.660000026 1 1 1</specular>
-            <pbr>
-              <metal>
-                <metalness>0.4</metalness>
-              </metal>
-            </pbr>
-          </material>
-        </visual>
-        <collision name='cylinder_weight2_col'>
-          <density>2710</density>
-          <pose>-0.043499999999999997 -0.025000000000000001 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_weight2'>
-          <pose>-0.043499999999999997 -0.025000000000000001 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0.660000026 1 1 1</ambient>
-            <diffuse>0.660000026 1 1 1</diffuse>
-            <specular>0.660000026 1 1 1</specular>
-            <pbr>
-              <metal>
-                <metalness>0.4</metalness>
-              </metal>
-            </pbr>
-          </material>
-        </visual>
-        <collision name='cylinder_weight3_col'>
-          <density>2710</density>
-          <pose>0.043499999999999997 -0.025000000000000001 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_weight3'>
-          <pose>0.043499999999999997 -0.025000000000000001 0 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.014999999999999999</length>
-              <radius>0.024</radius>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0.660000026 1 1 1</ambient>
-            <diffuse>0.660000026 1 1 1</diffuse>
-            <specular>0.660000026 1 1 1</specular>
-            <pbr>
-              <metal>
-                <metalness>0.4</metalness>
-              </metal>
-            </pbr>
-          </material>
-        </visual>
-        <enable_wind>false</enable_wind>
-      </link>
-      <model name='central_cylinder_pivot'>
-        <static>true</static>
-        <link name='cylinder_pivot'>
-          <collision name='cylinder_pivot_col'>
-            <geometry>
-              <cylinder>
-                <length>0.02</length>
-                <radius>0.024</radius>
-              </cylinder>
-            </geometry>
-            <surface>
-              <friction>
-                <ode/>
-              </friction>
-              <bounce/>
-              <contact/>
-            </surface>
-          </collision>
-          <visual name='cylinder_pivot_vis'>
-            <geometry>
-              <cylinder>
-                <length>0.02</length>
-                <radius>0.024</radius>
-              </cylinder>
-            </geometry>
-            <material>
-              <ambient>0.660000026 1 1 1</ambient>
-              <diffuse>0.660000026 1 1 1</diffuse>
-              <specular>0.660000026 1 1 1</specular>
-              <pbr>
-                <metal>
-                  <metalness>0.4</metalness>
-                </metal>
-              </pbr>
-            </material>
-          </visual>
-        </link>
-      </model>
-      <joint name='pivot' type='revolute'>
-        <pose>0 0 0 0 0 0</pose>
-        <parent>fidget_spinner</parent>
-        <child>central_cylinder_pivot::cylinder_pivot</child>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <limit>
-            <lower>-inf</lower>
-            <upper>inf</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
-            <stiffness>100000000</stiffness>
-            <dissipation>1</dissipation>
-          </limit>
-          <dynamics>
-            <spring_reference>0</spring_reference>
-            <spring_stiffness>0</spring_stiffness>
-            <damping>0</damping>
-            <friction>0</friction>
-          </dynamics>
-        </axis>
-      </joint>
-      <pose>0.71970299999999998 -1.35161 1.0249999999999999 1.2391700000000006e-07 -3.8868799999999998e-08 -5.8517499999999981e-09</pose>
+      <pose>0.94896199999999997 -1.0813699999999999 0.72610200000000003 0.017293599999999985 -0.029874100000000008 0.0052138000000000002</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/openrobotics/models/trashbin/2</uri>
-      <name>TrashBin</name>
-      <pose>1.0169399976730347 -0.10772699862718582 0 0 0 0</pose>
+      <uri>file:///home/surabhi/.gz/fuel/fuel.gazebosim.org/gambit/models/potted meat can/2</uri>
+      <name>potted_meat_can_0</name>
+      <pose>1.1201311732763659 -1.1687478910538827 0.72767286943813958 -1.5181072108366354 0.21761634364003896 1.5449390472737294</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>
