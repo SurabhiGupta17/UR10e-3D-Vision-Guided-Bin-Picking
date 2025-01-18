@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Vans_Cereal_Honey_Nut_Crunch_11_oz_box"
+description: "Van\'s Cereal, Honey Nut Crunch - 11 oz box"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Van\'s"
+}
+annotations {
+  key: "gtin"
+  value: "00089947801208"
+}
+annotations {
+  key: "sku"
+  value: "00089947801208-cloned-20141211161840842958"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

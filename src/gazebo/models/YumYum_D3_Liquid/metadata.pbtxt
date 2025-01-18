@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "YumYum_D3_Liquid"
+description: "Yum-Yum D3 Liquid\nJarrow Formulas Yum-Yum D3 Liquid delivers 200 IU of vitamin D3 (cholecalciferol) per drop. Vitamin D3 is essential for children (and adults) in promoting healthy bones, teeth, brain and immune system.* WARNING: Breast-fed and partially breast-fed infants should not consume more than 400 IU (international units) of vitamin D per day. Limit intake of this product to 2 drops per day in infants.  *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Jarrow Formulas"
+}
+annotations {
+  key: "gtin"
+  value: "790011320036"
+}
+annotations {
+  key: "mpn"
+  value: "790011320036"
+}
+annotations {
+  key: "sku"
+  value: "YUMDOIL"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

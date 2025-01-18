@@ -1,0 +1,34 @@
+model {
+  file: "model.sdf"
+}
+name: "Orbit_Bubblemint_Mini_Bottle_6_ct"
+description: "Orbit Bubblemint Mini Bottle - 6 ct"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Orbit"
+}
+annotations {
+  key: "gtin"
+  value: "00022000124685"
+}
+annotations {
+  key: "sku"
+  value: "00022000124685"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+}
