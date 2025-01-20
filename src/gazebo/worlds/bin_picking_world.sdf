@@ -79,17 +79,17 @@
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Weston_No_33_Signature_Sausage_Tonic_12_fl_oz</uri>
       <name>weston_no_33</name>
-      <pose>0.94896199999999997 -1.0813699999999999 0.72610200000000003 0.017293599999999937 -0.029874100000000046 0.0052138000000000097</pose>
+      <pose>0.94896199999999997 -1.0813699999999999 0.72610200000000003 0.017293599999999916 -0.02987410000000006 0.0052138000000000123</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/PottedMeatCan</uri>
       <name>potted_meat_can_0</name>
-      <pose>1.1201310753535916 -1.168747876870887 0.72767496889799665 -1.5182258674087061 0.21762945503082148 1.5449137025588042</pose>
+      <pose>1.1201310753535916 -1.168747876870887 0.72767496889799665 -1.5182258674087064 0.21762945503082148 1.544913702558804</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/PottedMeatCan</uri>
       <name>potted_meat_can</name>
-      <pose>0.76589207381968216 -1.1861331982128076 0.72767396836982934 -1.5182257809923481 0.21762944651112795 -0.27906504398211729</pose>
+      <pose>0.76589207381968216 -1.1861331982128076 0.72767396836982934 -1.5182257809923481 0.21762944651112787 -0.27906504398211734</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/MustardBottle</uri>
@@ -99,12 +99,12 @@
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/YumYum_D3_Liquid</uri>
       <name>yumyum_d3_liquid</name>
-      <pose>0.84850000000000003 -0.981989 0.72674000000000005 -0.0063153100000000123 -0.0046516300000000029 -2.8784200000000006</pose>
+      <pose>0.84850000000000003 -0.981989 0.72674000000000005 -0.0063153100000000219 -0.0046516300000000029 -2.8784200000000006</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Wilton_PreCut_Parchment_Sheets_10_x_15_24_sheets</uri>
       <name>wilton_precut_parchment</name>
-      <pose>0.77714799999999995 -1.29634 0.72487999999999997 -0.0027906800000000015 0.014548300000000007 3.124359999999998</pose>
+      <pose>0.77714799999999995 -1.29634 0.72487999999999997 -0.002790680000000002 0.014548300000000005 3.1243599999999971</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold</uri>
@@ -119,17 +119,17 @@
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Nescafe_Momento_Mocha_Specialty_Coffee_Mix_8_ct</uri>
       <name>nescafe_momento</name>
-      <pose>0.49492799999999998 -1.3006800000000001 0.72657000000000005 -0.0030983199999999999 -0.0070154199999999927 -0.30740099999999942</pose>
+      <pose>0.49492799999999998 -1.3006800000000001 0.72657000000000005 -0.0030983199999999999 -0.0070154199999999875 -0.30740099999999942</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Orbit_Bubblemint_Mini_Bottle_6_ct</uri>
       <name>orbit_bubblemint</name>
-      <pose>1.13558 -1.31409 0.72648000000000001 0.0014273100000000011 -0.0037963700000000098 0.42945600000000056</pose>
+      <pose>1.13558 -1.31409 0.72648000000000001 0.00142731 -0.0037963700000000111 0.42945600000000056</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Nestle_Nesquik_Chocolate_Powder_Flavored_Milk_Additive_109_Oz_Canister</uri>
       <name>nestle_nesquick</name>
-      <pose>0.70176400000000005 -0.95255000000000001 0.72663299999999997 -0.0043575299999999992 -0.00077532400000000204 -2.0057800000000015</pose>
+      <pose>0.70176400000000005 -0.95255000000000001 0.72663299999999997 -0.0043575299999999983 -0.00077532399999999922 -2.0057800000000015</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Vans_Cereal_Honey_Nut_Crunch_11_oz_box</uri>
@@ -139,12 +139,12 @@
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Marc_Anthony_True_Professional_Strictly_Curls_Curl_Defining_Lotion</uri>
       <name>marc_anthony_strictly_curls</name>
-      <pose>0.94857698678970315 -0.92697900533676159 0.72631698846817017 0.0067585963811790835 -0.040692320984543284 -2.0415162843934889</pose>
+      <pose>0.94857698678970315 -0.92697900533676159 0.72631698846817017 0.0067585963811791008 -0.040692320984543291 -2.0415162843934889</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/Twinlab_Nitric_Fuel</uri>
       <name>twinlab_nitric_fuel</name>
-      <pose>0.58199501037597656 -0.88497799634933483 0.72663199901580811 0.00016399200387829003 0.0082861103929021702 2.6939387690907721</pose>
+      <pose>0.58199501037597656 -0.88497799634933483 0.72663199901580811 0.0001639920038782883 0.0082861103929021702 2.6939387690907721</pose>
     </include>
     <include>
       <uri>file:///home/surabhi/UR10e-3D-Vision-Guided-Bin-Picking/src/gazebo/models/TrashBin</uri>

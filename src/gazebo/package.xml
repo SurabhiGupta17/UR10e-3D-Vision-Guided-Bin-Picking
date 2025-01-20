@@ -12,6 +12,19 @@
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
+  <depend>robot_state_publisher</depend>
+  <depend>controller_manager</depend>
+  <depend>gz_ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  <depend>ros_gz</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>ros_gz_sim</depend>
+  <exec_depend>rclpy</exec_depend>
+
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>
