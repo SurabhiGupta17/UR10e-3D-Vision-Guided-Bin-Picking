@@ -16,7 +16,7 @@ and authored by Adwait Naik. The moment of interia is not supposed to be changed
            <iyz>5.1836699346339805e-24</iyz>
            <izz>4.2928863786736384e-07</izz>
           </inertia>
-          <mass>0.0006120391571167176</mass>
+          <mass>0.6120391571167176</mass>
         </inertial>
         <collision name="collision">
           <geometry>
@@ -24,6 +24,23 @@ and authored by Adwait Naik. The moment of interia is not supposed to be changed
              <uri>textured.dae</uri>
             </mesh>
           </geometry>
+          <surface>
+            <friction>
+                <bullet>
+                 <friction>0.3</friction>
+                  <friction2>0.3</friction2>
+                  <rolling_friction>0.02</rolling_friction>
+                </bullet>
+            </friction>
+            <contact>
+              <bullet>
+                <soft_cfm>0.00001</soft_cfm>
+                <soft_erp>0.05</soft_erp>
+                <kp>1e3</kp>
+                <kd>50</kd>
+              </bullet>
+            </contact>
+          </surface>
         </collision>
 
         <visual name="visual">

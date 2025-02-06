@@ -18,10 +18,27 @@
             <scale>1.5 1.5 1.5</scale>
           </mesh>
         </geometry>
+        <surface>
+            <friction>
+              <bullet>
+                <friction>1.0</friction>
+                <friction2>1.0</friction2>
+                <rolling_friction>0.1</rolling_friction>
+              </bullet>
+            </friction>
+            <contact>
+              <bullet>
+                <soft_cfm>0.001</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e4</kp>
+                <kd>10</kd>
+              </bullet>
+            </contact>
+          </surface>
       </collision>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>1</mass>
+        <mass>30</mass>
         <inertia>
           <ixx>1</ixx>
           <ixy>0</ixy>
