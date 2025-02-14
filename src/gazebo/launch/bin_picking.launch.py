@@ -67,26 +67,19 @@ def generate_launch_description():
         # remappings=[('/tf', '/robot_arm/tf'), ('/tf_static', '/robot_arm/tf_static'),]
     )
 
-    # joint_state_broadcaster_spawner = Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=["joint_state_broadcaster", "--controller-manager", "/robot_arm/controller_manager"],
-    #     namespace='robot_arm',
-    # )
+    joint_state_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
+        # namespace='robot_arm',
+    )
 
-    # joint_controller_gui = Node(
-    #     package="joint_controller_gui",
-    #     executable="joint_controller_gui",
-    #     namespace='robot_arm',
-    #     remappings=[('/position_controller', '/robot_arm/position_controller'), ('/position_controller/commands', '/robot_arm/position_controller/commands')]
-    # )
-
-    # robot_controller_spawner = Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=["position_controller", "--controller-manager", "/robot_arm/controller_manager"],
-    #     namespace='robot_arm',
-    # )
+    robot_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_trajectory_controller", "--controller-manager", "/controller_manager"],
+        # namespace='robot_arm',
+    )
 
     gazebo_process = ExecuteProcess(
     cmd=['gz', 'sim', '-r', world_file_path],
@@ -99,26 +92,30 @@ def generate_launch_description():
              '--reqtype', 'gz.msgs.EntityFactory',
              '--reptype', 'gz.msgs.Boolean',
              '--timeout', '2000',
-             '--req', f'sdf_filename: "{urdf_output_path}", name: "bin_picking_robot", pose: {{position: {{x: 0, y: 0, z: 0}}}}'],
+             '--req', f'sdf_filename: "{urdf_output_path}", name: "bin_picking_robot", pose: {{position: {{x: 0.84217500000000001, y: -0.50013799999999997, z: 0.6}}}}'],
         output='screen'
     )
 
     return LaunchDescription([
         gazebo_process,
         TimerAction(
-            period=2.0,
+            period=3.0,
             actions=[robot_state_pub_node]
         ),
         TimerAction(
-            period=4.0,
+            period=5.0,
             actions=[spawn_robot_arm]
         ),
         # TimerAction(
-        #     period=5.0,
-        #     actions=[joint_state_broadcaster_spawner]
+        #     period=7.0,
+        #     actions=[controller_manager_node]
         # ),
-        # TimerAction(
-        #     period=6.0,
-        #     actions=[robot_controller_spawner]
-        # ),
+        TimerAction(
+            period=7.0,
+            actions=[joint_state_broadcaster_spawner]
+        ),
+        TimerAction(
+            period=9.0,
+            actions=[robot_controller_spawner]
+        ),
     ])

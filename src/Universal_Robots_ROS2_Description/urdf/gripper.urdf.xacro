@@ -1,342 +1,329 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://wiki.ros.org/xacro" name="robotiq_2f_85_gripper">
-  <xacro:macro name="robotiq_85_gripper" params="tf_prefix">
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="t42">
+  <xacro:macro name="t42_gripper" params="tf_prefix">
 
-    <xacro:macro name = "material_color">
-      <material name = "black">
-        <color rgba = "0.7 0.7 0.7 1"/>
-      </material>
-    </xacro:macro>
+    <link name="hand_base" />
 
-    <link name="robotiq_85_base_link">
-      <inertial>
-        <origin xyz="0.00021987 -2.3546E-10 0.030163" rpy="0 0 0"/>
-        <mass value="0.30915" />
-        <inertia ixx="0.00028972" ixy="-5.7879E-10" ixz="-1.8543E-06" iyy="0.00030737" iyz="1.682E-12" izz="0.00019914" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/robotiq_85_base_link_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/robotiq_85_base_link_coarse.STL" />
-        </geometry>
-      </collision>
-    </link>
-
-    <joint name="${tf_prefix}flange_robotiq_85_base_link" type="fixed">
+    <joint name="${tf_prefix}flange_hand_base" type="fixed">
         <parent link="${tf_prefix}flange" />
-        <child link="robotiq_85_base_link" />
-        <origin xyz="0 0 0" rpy="0 1.57 0" />
-      </joint>
-
-    <link name="left_outer_knuckle">
-      <inertial>
-        <origin xyz="0.0178331863169983 3.68915177224286E-11 0.0021442477325704" rpy="0 0 0" />
-        <mass value="0.00684838849434396" />
-        <inertia ixx="2.66832029033166E-07" ixy="1.66142314639824E-15" ixz="1.45945633322873E-07"
-               iyy="1.3889233257419E-06" iyz="2.82951161241588E-15" izz="1.26603336914415E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_knuckle_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_knuckle_coarse.STL" />
-        </geometry>
-      </collision>
-    </link>
-  
-    <joint name="finger_joint" type="revolute">
-      <origin xyz="0.0306011444260539 0 0.0627920162695395" rpy="0 0 0" />
-      <parent link="robotiq_85_base_link" />
-      <child link="left_outer_knuckle" />
-      <axis xyz="0 -1 0" />
-      <limit lower="0" upper="0.725" velocity="2.0" effort="1000" />
-    </joint>
-  
-    <link name="left_outer_finger">
-      <inertial>
-        <origin xyz="0.00131451599174296 2.88942057994543E-15 0.0215404163180413" rpy="0 0 0" />
-        <mass value="0.0273093985570947" />
-        <inertia ixx="8.51629628283022E-06" ixy="2.58174336207405E-19" ixz="3.83829504344079E-07"
-                 iyy="6.9133328065108E-06" iyz="-7.58589926143789E-19" izz="2.25006832221981E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_finger_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_finger_coarse.STL" />
-        </geometry>
-      </collision>
-    </link>
-
-    <joint name="left_outer_finger_joint" type="fixed">
-      <origin xyz="0.0316910442266543 0 -0.00193396375724605" rpy="0 0 0" />
-      <parent link="left_outer_knuckle" />
-      <child link="left_outer_finger" />
-      <axis xyz="0 -1 0" />
+        <child link="hand_base" />
+        <origin xyz="0 0 0" rpy="0 3.14 0" />
     </joint>
 
-    <link name="left_inner_knuckle">
-      <inertial>
-        <origin xyz="0.017097546626628 -3.93808524389535E-10 0.0224918438201868" rpy="0 0 0" />
-        <mass value="0.0110930853895903" />
-        <inertia ixx="4.23392770691541E-06" ixy="5.748978936968E-15" ixz="1.78855677119788E-06"
-                 iyy="3.96548790524392E-06" iyz="1.05464666369669E-14" izz="3.24068002883007E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_knuckle_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_knuckle_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="hand_coupler">
+        <inertial>
+            <origin xyz="0.000000 0.000000 0.025400" />
+            <mass value="1.0" />
+            <inertia ixx="1000.0" ixy="0.0" ixz="0.0" iyy="1000.0" iyz="0.0" izz="1000.0" />
+        </inertial>
+        <visual>
+            <material name="lightblue">
+                <color rgba="0. 0.3 1.0 1.0" />
+            </material>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.00762" radius="0.05715" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.00762" radius="0.05715" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="left_inner_knuckle_joint" type="revolute">
-      <origin xyz="0.0127000000001501 0 0.0693074999999639" rpy="0 0 0" />
-      <parent link="robotiq_85_base_link" />
-      <child link="left_inner_knuckle" />
-      <axis xyz="0 -1 0" />
-      <limit lower="0" upper="0.8757" velocity="2.0" effort="1000" />
-      <mimic joint="finger_joint" multiplier="1" offset="0" />
-    </joint>
-
-    <link name="left_inner_finger">
-      <inertial>
-        <origin xyz="0.0060275613594574 -6.29183141465421E-15 0.00669925693133241" rpy="0 0 0" />
-        <mass value="0.00724255346165745" />
-        <inertia ixx="1.47824274053603E-06" ixy="-3.94884463570303E-19" ixz="-3.45268847648622E-07"
-                 iyy="1.70064480838395E-06" iyz="3.5059838910097E-19" izz="4.77151336838364E-07" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_finger_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_finger_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="motor_space">
+        <inertial>
+            <origin xyz="0.000000 0.000000 0.025400" />
+            <mass value="1.0" />
+            <inertia ixx="1000.0" ixy="0.0" ixz="0.0" iyy="1000.0" iyz="0.0" izz="1000.0" />
+        </inertial>
+        <visual>
+            <material name="black">
+                <color rgba="0. 0. 0. 1.0" />
+            </material>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.0508" radius="0.04572" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.0508" radius="0.05715" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="left_inner_finger_joint" type="revolute">
-      <origin xyz="0.034585310861294 0 0.0454970193817975" rpy="0 0 0" />
-      <parent link="left_inner_knuckle" />
-      <child link="left_inner_finger" />
-      <axis xyz="0 -1 0" />
-      <limit lower="0" upper="0.8757" velocity="2.0" effort="1000" />
-      <mimic joint="finger_joint" multiplier="-1" offset="0" />
-    </joint>
-
-    <link name="right_inner_knuckle">
-      <inertial>
-        <origin xyz="0.0168606186773776 3.93808471820465E-10 0.0226699950793434" rpy="0 0 0" />
-        <mass value="0.0110930853895903" />
-        <inertia ixx="4.27134775939882E-06" ixy="-8.53568456728898E-15" ixz="1.77774229944246E-06"
-                 iyy="3.96548790524392E-06" iyz="-8.45108024914164E-15" izz="3.20325997634666E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_knuckle_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_knuckle_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="simple_base">
+        <inertial>
+            <origin xyz="0.000000 0.000000 0.025400" />
+            <mass value="1.0" />
+            <inertia ixx="1000.0" ixy="0.0" ixz="0.0" iyy="1000.0" iyz="0.0" izz="1000.0" />
+        </inertial>
+        <visual>
+            <material name="lightlue">
+                <color rgba="0. 0.3 1.0 1.0" />
+            </material>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.00762" radius="0.05715" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 1.57079632679 0" xyz="0.000000 0.000000 0.000000" />
+            <geometry>
+                <cylinder length="0.00762" radius="0.05715" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="right_inner_knuckle_joint" type="revolute">
-      <origin xyz="-0.0126999999998499 0 0.0693075000000361" rpy="0 0 3.14159265358979" />
-      <parent link="robotiq_85_base_link" />
-      <child link="right_inner_knuckle" />
-      <axis xyz="0 1 0" />
-      <limit lower="0" upper="0.8757" velocity="2.0" effort="1000" />
-      <mimic joint="finger_joint" multiplier="-1" offset="0" />
-    </joint>
-
-    <link name="right_inner_finger">
-      <inertial>
-        <origin xyz="0.00602756228812038 -6.47284509480176E-15 0.00669925609578108" rpy="0 0 0" />
-        <mass value="0.00724255346165744" />
-        <inertia ixx="1.47824283625957E-06" ixy="-3.95952064019123E-19" ixz="-3.45268708875543E-07"
-                 iyy="1.70064480838394E-06" iyz="3.55286507960029E-19" izz="4.77151241114822E-07" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_finger_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/inner_finger_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="prox_r">
+        <inertial>
+            <origin xyz="-0.015875 -0.009000 -0.071550" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        </inertial>
+        <visual>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0" />
+            </material>
+            <origin xyz="-0.015875 -0.009000 -0.071550" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/proximal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 -0.031750" />
+            <geometry>
+                <box size="0.038100 0.019050 0.078740" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="right_inner_finger_joint" type="revolute">
-      <origin xyz="0.0341060475457406 0 0.0458573878541688" rpy="0 0 0" />
-      <parent link="right_inner_knuckle" />
-      <child link="right_inner_finger" />
-      <axis xyz="0 1 0" />
-      <limit lower="0" upper="0.8757" velocity="2.0" effort="1000" />
-      <mimic joint="finger_joint" multiplier="1" offset="0" />
-    </joint>
-
-    <link name="right_outer_knuckle">
-      <inertial>
-        <origin xyz="0.0178097074051638 3.60493211424024E-11 0.00233123458346721" rpy="0 0 0" />
-        <mass value="0.00684838849401352" />
-        <inertia ixx="2.70004361573169E-07" ixy="1.59579467624491E-15" ixz="1.56396493788199E-07"
-                 iyy="1.38892332558312E-06" iyz="2.82357800318817E-15" izz="1.26286103637978E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_knuckle_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_knuckle_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="prox_l">
+        <inertial>
+            <origin xyz="-0.015875 -0.009000 -0.071550" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        </inertial>
+        <visual>
+            <material name="white">
+                <color rgba="1.0 1.0 1.0 1.0" />
+            </material>
+            <origin xyz="-0.015875 -0.009000 -0.071550" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/proximal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.000000 0.000000 -0.031750" />
+            <geometry>
+                <box size="0.038100 0.019050 0.078740" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <link name="distal_r">
+        <inertial>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        </inertial>
+        <visual>
+            <material name="green">
+                <color rgba="0.1 1.0 0.1 1.0" />
+            </material>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/distal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/distal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="right_outer_knuckle_joint" type="revolute">
-      <origin xyz="-0.0306011444258893 0 0.0627920162695395" rpy="0 0 3.14159265358979" />
-      <parent link="robotiq_85_base_link" />
-      <child link="right_outer_knuckle" />
-      <axis xyz="0 1 0" />
-      <limit lower="0" upper="0.8757" velocity="2.0" effort="1000" />
-      <mimic joint="finger_joint" multiplier="-1" offset="0" />
-    </joint>
-
-    <link name="right_outer_finger">
-      <inertial>
-        <origin xyz="0.00108844269639009 -2.611488350845E-15 0.0215530225245502" rpy="0 0 0" />
-        <mass value="0.0273093985570947" />
-        <inertia ixx="8.52366028592721E-06" ixy="3.41683380899422E-19" ixz="3.18003675694284E-07"
-                 iyy="6.91333280651081E-06" iyz="7.37726682706417E-19" izz="2.24270431912283E-06" />
-      </inertial>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_finger_fine.STL" />
-        </geometry>
-        <xacro:material_color/>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="model://ur_description/meshes/robotiq_gripper/outer_finger_coarse.STL" />
-        </geometry>
-      </collision>
+    <link name="distal_l">
+        <inertial>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <mass value="0.1" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        </inertial>
+        <visual>
+            <material name="orange">
+                <color rgba="0.9 0.3 0.1 1.0" />
+            </material>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/distal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.015875 -0.011709 -0.048006" />
+            <geometry>
+                <mesh filename="package://ur_description/meshes/t42/distal.stl" scale="0.025400 0.025400 0.025400" />
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="right_outer_finger_joint" type="fixed">
-      <origin xyz="0.0317095909367246 0 -0.0016013564954687" rpy="0 0 0" />
-      <parent link="right_outer_knuckle" />
-      <child link="right_outer_finger" />
-      <axis xyz="0 1 0" />
+    <joint name="fixed1" type="fixed">
+        <origin rpy="0 0 0" xyz="-0.008890 0.000000 0.000000" />
+        <parent link="hand_base" />
+        <child link="hand_coupler" />
     </joint>
 
-    <gazebo reference="left_inner_knuckle_joint">
-      <preserveFixedJoint>true</preserveFixedJoint>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
+    <joint name="fixed2" type="fixed">
+        <origin rpy="0 0 0" xyz="-0.029210 0.000000 0.000000" />
+        <parent link="hand_coupler" />
+        <child link="motor_space" />
+    </joint>
+
+    <joint name="fixed3" type="fixed">
+        <origin rpy="0 0 0" xyz="-0.029210 0.000000 0.000000" />
+        <parent link="motor_space" />
+        <child link="simple_base" />
+    </joint>
+
+    <joint name="base_to_prox_r" type="revolute">
+        <origin rpy="-1.57079632679 1.57079632679 0" xyz="-0.016510 -0.017780 0.000000" />
+        <parent link="simple_base" />
+        <child link="prox_r" />
+        <limit effort="10000" lower="0.0" upper="3.0" velocity="2" />
+        <axis xyz="1 0 0" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+    <joint name="base_to_prox_l" type="revolute">
+        <origin rpy="1.57079632679 -1.57079632679 0" xyz="-0.016510 0.017780 0.000000" />
+        <parent link="simple_base" />
+        <child link="prox_l" />
+        <limit effort="10000" lower="0.0" upper="3.0" velocity="2" />
+        <axis xyz="1 0 0" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+    <joint name="prox_to_distal_r" type="revolute">
+        <origin rpy="0 0 0" xyz="0.000000 0.000000 -0.062551" />
+        <parent link="prox_r" />
+        <child link="distal_r" />
+        <limit effort="10000" lower="0.0" upper="3.0" velocity="2" />
+        <axis xyz="1 0 0" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+    <joint name="prox_to_distal_l" type="revolute">
+        <origin rpy="0 0 0" xyz="0.000000 0.000000 -0.062551" />
+        <parent link="prox_l" />
+        <child link="distal_l" />
+        <limit effort="10000" lower="0.0" upper="3.0" velocity="2" />
+        <axis xyz="1 0 0" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+    <gazebo reference="hand_coupler">
+        <material>Gazebo/SkyBlue</material>
+        <selfCollide>false</selfCollide>
     </gazebo>
 
-    <gazebo reference="left_inner_finger_joint">
-      <preserveFixedJoint>true</preserveFixedJoint>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
+    <gazebo reference="motor_space">
+        <material>Gazebo/Black</material>
+        <selfCollide>false</selfCollide>
     </gazebo>
 
-    <gazebo reference="right_inner_knuckle_joint">
-      <preserveFixedJoint>true</preserveFixedJoint>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
+    <gazebo reference="simple_base">
+        <material>Gazebo/SkyBlue</material>
+        <selfCollide>true</selfCollide>
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <kd>1</kd>
+        <kp>6000000</kp>
     </gazebo>
 
-    <gazebo reference="right_outer_knuckle_joint">
-      <preserveFixedJoint>true</preserveFixedJoint>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
+    <gazebo reference="prox_r">
+        <material>Gazebo/White</material>
+        <selfCollide>true</selfCollide>
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <kd>1</kd>
+        <kp>6000000</kp>
     </gazebo>
 
-    <gazebo reference="right_inner_finger_joint">
-      <preserveFixedJoint>true</preserveFixedJoint>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-        </ode>
-      </physics>
+    <gazebo reference="prox_l">
+        <material>Gazebo/White</material>
+        <selfCollide>true</selfCollide>
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <kd>1</kd>
+        <kp>6000000</kp>
     </gazebo>
+
+    <gazebo reference="distal_r">
+        <material>Gazebo/Green</material>
+        <selfCollide>true</selfCollide>
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <kd>1</kd>
+        <kp>6000000</kp>
+    </gazebo>
+
+    <gazebo reference="distal_l">
+        <material>Gazebo/Orange</material>
+        <selfCollide>true</selfCollide>
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <kd>1</kd>
+        <kp>10000000</kp>
+    </gazebo>
+
+
+    <transmission name="tran11">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_to_prox_r">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor11">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran12">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base_to_prox_l">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor12">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran13">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="prox_to_distal_r">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor13">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="tran14">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="prox_to_distal_l">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor14">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
   </xacro:macro>
 </robot>

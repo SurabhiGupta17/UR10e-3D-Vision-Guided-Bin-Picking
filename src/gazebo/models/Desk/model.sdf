@@ -16,27 +16,10 @@
               <uri>meshes/desk.obj</uri>
             </mesh>
           </geometry>
-          <surface>
-            <friction>
-              <bullet>
-                <friction>0.3</friction>
-                <friction2>0.3</friction2>
-                <rolling_friction>0.05</rolling_friction>
-              </bullet>
-            </friction>
-            <contact>
-              <bullet>
-                <soft_cfm>0.0005</soft_cfm>
-                <soft_erp>0.1</soft_erp>
-                <kp>5e3</kp>
-                <kd>15</kd>
-              </bullet>
-            </contact>
-          </surface>
         </collision>
         <inertial>
           <pose>0 0 0 0 0 0</pose>
-          <mass>100</mass>
+          <mass>1</mass>
           <inertia>
             <ixx>1</ixx>
             <ixy>0</ixy>

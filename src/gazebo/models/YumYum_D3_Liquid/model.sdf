@@ -23,28 +23,11 @@ to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
               <uri>meshes/model.obj</uri>
             </mesh>
           </geometry>
-          <surface>
-            <friction>
-                <bullet>
-                 <friction>0.3</friction>
-                  <friction2>0.3</friction2>
-                  <rolling_friction>0.02</rolling_friction>
-                </bullet>
-            </friction>
-            <contact>
-              <bullet>
-                <soft_cfm>0.00001</soft_cfm>
-                <soft_erp>0.05</soft_erp>
-                <kp>1e3</kp>
-                <kd>50</kd>
-              </bullet>
-            </contact>
-          </surface>
         </collision>
         <pose>0 0 0 0 0 0</pose>
         <inertial>
           <pose>0 0 0 0 0 0</pose>
-          <mass>0.6</mass>
+          <mass>1</mass>
           <inertia>
             <ixx>1</ixx>
             <ixy>0</ixy>

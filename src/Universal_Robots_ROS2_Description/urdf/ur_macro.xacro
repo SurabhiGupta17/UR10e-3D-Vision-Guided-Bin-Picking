@@ -381,7 +381,7 @@
     </joint>
 
     <xacro:include filename="$(find ur_description)/urdf/gripper.urdf.xacro" />
-    <xacro:robotiq_85_gripper tf_prefix="${tf_prefix}"/>
+    <xacro:t42_gripper tf_prefix="${tf_prefix}"/>
 
     <!-- ROS-Industrial 'tool0' frame - all-zeros tool frame -->
     <link name="${tf_prefix}tool0"/>
@@ -391,6 +391,9 @@
       <parent link="${tf_prefix}flange"/>
       <child link="${tf_prefix}tool0"/>
     </joint>
+
+    <xacro:include filename="$(find ur_description)/control/ur10e_ros2_control.urdf.xacro" />
+    <xacro:robot_arm_ros2_control name="robotname"/>
 
   </xacro:macro>
 </robot>

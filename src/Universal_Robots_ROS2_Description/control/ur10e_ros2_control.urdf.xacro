@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="robot_arm_ros2_control" params="name">
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      
+      <joint name="shoulder_pan_joint">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.14</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="shoulder_lift_joint">
+        <command_interface name="position">
+          <param name="min">-1.570795</param>
+          <param name="max">1.570795</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="elbow_joint">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.14159</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="wrist_1_joint">
+        <command_interface name="position">
+          <param name="min">-1.570795</param>
+          <param name="max">1.570795</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="wrist_2_joint">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.14159</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="wrist_3_joint">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.14159</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      
+      <joint name="base_to_prox_r">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="base_to_prox_l">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="prox_to_distal_r">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <joint name="prox_to_distal_l">
+        <command_interface name="position">
+          <param name="min">0.0</param>
+          <param name="max">3.0</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
+    <gazebo>
+      <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find ur_description)/config/ur10e_controllers.yaml</parameters>
+        <robot_param>robot_description</robot_param>
+        <robot_param_node>robot_state_publisher</robot_param_node>
+        <!-- <ros>
+          <namespace>robot_arm</namespace>
+          <remapping>/robot_description:=/robot_arm/robot_description</remapping>
+        </ros> -->
+      </plugin>
+    </gazebo>
+
+    <!-- <gazebo>
+      <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>/home/surabhi/gripper/install/robot_description/share/robot_description/config/gripper_controllers.yaml</parameters>
+        <robot_param>robot_description</robot_param>
+        <robot_param_node>robot_state_publisher</robot_param_node>
+      </plugin>
+    </gazebo> -->
+
+  </xacro:macro>
+
+</robot>
