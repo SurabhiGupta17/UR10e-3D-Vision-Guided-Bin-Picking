@@ -6,6 +6,8 @@ This project focuses on developing an autonomous bin-picking system using the UR
 ## Hardware & Simulation Setup
 The robotic system is built using the UR10e manipulator, equipped with a Model T42 gripper for object handling. The simulation environment is set up in Gazebo. The Intel RealSense D435 camera will be used to provide depth perception and enable object recognition.
 
+https://private-user-images.githubusercontent.com/103124390/414504098-493e9f8f-b443-472b-b18a-b137cda246a7.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5Mjc1ODMsIm5iZiI6MTczOTkyNzI4MywicGF0aCI6Ii8xMDMxMjQzOTAvNDE0NTA0MDk4LTQ5M2U5ZjhmLWI0NDMtNDcyYi1iMThhLWIxMzdjZGEyNDZhNy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxOVQwMTA4MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zMWY2YmUyNzM2NTZmOWJhOWU5MmQyYTk4OWI1ODNiNGZjODNmMTg3YjkwN2U3NDlhZTAwNDg4MjFhNjk2MTVmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UUnvYhjOeInpDq91fShTGxWce8opdBYJtq27O2_XJeQ
+
 ## Software Stack
 The project is implemented using ROS2 Jazzy, with Gazebo Harmonic for simulation. The control framework will include MoveIt for motion planning and real-time execution. The perception pipeline will utilize OpenCV and PCL for point cloud processing and object localization.
 
