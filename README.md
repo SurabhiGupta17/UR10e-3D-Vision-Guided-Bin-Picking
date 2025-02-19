@@ -13,8 +13,7 @@ The project is implemented using ROS2 Jazzy, with Gazebo Harmonic for simulation
 The UR10e robotic arm model, along with the Model T42 gripper, has been integrated into the simulation. Controllers have been configured for smooth joint actuation, and the environment has been set up with relevant objects for testing. The next step is integrating the vision system by adding the Intel RealSense D435 camera to the robot, which will enable object detection and pose estimation.
 
 ### Simulation Setup Video  
-![Simulation Preview](assets/Simulation.mp4) 
-https://github.com/SurabhiGupta17/UR10e-3D-Vision-Guided-Bin-Picking/blob/main/assets/Simulation.mp4 
+https://private-user-images.githubusercontent.com/103124390/414502265-7a57e7e8-6601-46dd-add0-7d9dbdf206e7.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk5MjcwODUsIm5iZiI6MTczOTkyNjc4NSwicGF0aCI6Ii8xMDMxMjQzOTAvNDE0NTAyMjY1LTdhNTdlN2U4LTY2MDEtNDZkZC1hZGQwLTdkOWRiZGYyMDZlNy5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxOVQwMDU5NDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03NTk3M2VkYjhiY2RjMjQyYWMzYjU3YmUyMjcxZDAzNmQ0MjUxZTk0YmRlNTU3MmFlN2ZjYTg1ZDc0OGE2OTI0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.HED4P3_vmrQAqwKffR6wLl4wc9r60WFVo3JVK4i8QwA
 
 ## Next Steps
 - Implement vision-based object detection and pose estimation.
